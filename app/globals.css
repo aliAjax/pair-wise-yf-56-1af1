@@ -14,3 +14,62 @@ button, input, select { font: inherit; }
 form label { display: block; margin-bottom: 4px; font-weight: 650; }.input { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 9px; margin-bottom: 4px; }
 .timeline { display: flex; flex-direction: column; }.timeline article { display: grid; grid-template-columns: 16px 1fr; gap: 10px; padding-bottom: 18px; position: relative; }.timeline article i { width: 10px; height: 10px; margin-top: 4px; border-radius: 50%; background: #e11d48; box-shadow: 0 0 0 4px #fee2e2; }.timeline article:not(:last-child)::after { content: ""; position: absolute; left: 4px; top: 16px; bottom: 0; width: 1px; background: #cbd5e1; }.timeline-meta { display: flex; justify-content: space-between; color: #64748b; font-size: 12px; }.timeline p { margin: 6px 0 0; }
 @media (max-width: 900px) { .metrics { grid-template-columns: repeat(2, 1fr); }.grid { grid-template-columns: 1fr; }.topbar { flex-direction: column; }.action-row { flex-direction: column; } }
+
+/* 对外通报修订流程 */
+.inline-icon { vertical-align: -2px; margin-right: 6px; color: #e11d48; }
+.version-badge { background: #eef2f7; color: #475569; font-variant-numeric: tabular-nums; }
+.status-draft { background: #e2e8f0; color: #475569; }
+.status-pending_review { background: #fef3c7; color: #b45309; }
+.status-approved { background: #dbeafe; color: #1d4ed8; }
+.status-publish_failed { background: #fee2e2; color: #b91c1c; }
+.status-published { background: #dcfce7; color: #15803d; }
+.conflict-banner { display: flex; align-items: center; gap: 8px; padding: 10px 13px; margin-bottom: 12px; border-radius: 10px; background: #fff7ed; color: #9a3412; border: 1px solid #fdba74; font-size: 13px; }
+.stale-note { padding: 8px 12px; margin-bottom: 12px; border-radius: 8px; background: #f1f5f9; color: #64748b; font-size: 12px; }
+.bulletin-blocks { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+.bulletin-block { position: relative; padding: 12px 14px; border: 1px solid #e2e8f0; border-radius: 10px; background: #f8fafc; }
+.bulletin-block p { margin: 0; line-height: 1.6; font-size: 14px; }
+.bulletin-block.sensitive { border-color: #fecaca; background: #fef2f2; }
+.bulletin-block.sensitive p { color: #7f1d1d; }
+.lock-tag { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; color: #b91c1c; background: #fee2e2; padding: 1px 7px; border-radius: 999px; margin-bottom: 5px; }
+.block-editor { border: 1px dashed #cbd5e1; border-radius: 10px; padding: 10px; background: #fff; }
+.block-editor.sensitive { border-color: #fca5a5; background: #fff5f5; }
+.block-editor textarea { width: 100%; border: 1px solid #cbd5e1; border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 14px; resize: vertical; }
+.block-editor-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 7px; }
+.sensitive-toggle { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; font-weight: 500; }
+.sensitive-toggle input { margin: 0; }
+.edit-bar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+.edit-note { flex: 1; min-width: 180px; margin-bottom: 0; }
+.bulletin-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.countersign-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; padding: 11px 13px; border-radius: 10px; background: #f8fafc; border: 1px solid #e2e8f0; margin-bottom: 12px; }
+.sign { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: #94a3b8; }
+.sign.signed { color: #15803d; font-weight: 650; }
+.publish-result { display: flex; flex-direction: column; gap: 2px; padding: 11px 13px; border-radius: 10px; margin-bottom: 10px; font-size: 13px; }
+.publish-result.ok { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.publish-result.ok strong { color: #15803d; }
+.publish-result.fail { background: #fef2f2; border: 1px solid #fecaca; }
+.publish-result.fail strong { color: #b91c1c; }
+.publish-result span { color: #64748b; font-size: 12px; }
+.pending-box { display: flex; gap: 9px; align-items: flex-start; padding: 11px 13px; border-radius: 10px; background: #fffbeb; border: 1px solid #fde68a; margin-bottom: 12px; font-size: 13px; color: #92400e; }
+.pending-box div { display: flex; flex-direction: column; gap: 2px; }
+.pending-box span { font-size: 12px; color: #a16207; }
+.revision-list { margin-top: 6px; }
+.revision-list summary { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; color: #64748b; font-size: 13px; }
+.revision { display: flex; gap: 9px; align-items: baseline; padding: 7px 0; border-bottom: 1px dashed #e2e8f0; font-size: 13px; }
+.revision strong { color: #475569; font-variant-numeric: tabular-nums; }
+.revision span { color: #64748b; }
+.revision.current strong { color: #e11d48; }
+
+/* 证据与范围 */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 7px; border: 1px solid #cbd5e1; border-radius: 9px; background: #fff; margin-bottom: 4px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; background: #eef2f7; font-size: 12px; color: #334155; }
+.chip button { display: inline-flex; border: 0; background: transparent; cursor: pointer; color: #94a3b8; padding: 0; }
+.chip button:hover { color: #b91c1c; }
+.chip-input { flex: 1; min-width: 120px; border: 0; outline: 0; font: inherit; font-size: 13px; padding: 3px; }
+.inline-actions { display: flex; gap: 8px; align-items: center; margin: 6px 0 12px; }
+.inline-actions .input { margin-bottom: 0; }
+.evidence-list { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.evidence-row { display: flex; flex-direction: column; gap: 2px; padding: 9px 11px; border-radius: 9px; background: #f8fafc; border: 1px solid #e2e8f0; }
+.evidence-row strong { font-size: 13px; }
+.evidence-row span { font-size: 12px; }
+.sync-btn { margin-left: 8px; border: 0; background: #e11d48; color: #fff; font-size: 12px; padding: 2px 9px; border-radius: 999px; cursor: pointer; }
+.sync-btn:hover { background: #be123c; }
